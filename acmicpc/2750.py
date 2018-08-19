@@ -1,5 +1,11 @@
 import sys
-q = lambda: sys.stdin.readline().strip()
-l = sys.stdin.readline().strip()
-for i in range(int(l)):
-	print(q())
+q = lambda: int(sys.stdin.readline())
+n = q()
+
+arr = []
+for _ in range(n):
+	arr.append(q())
+arr.sort()
+for i in arr:
+	print(i)
+	
