@@ -1,17 +1,18 @@
 """
-title: 요세푸스 문제
-link: https://www.acmicpc.net/problem/1158
+# 요세푸스 문제  
+- problem: 1158
+- link: https://www.acmicpc.net/problem/1158  
 
-Input: <a1, a2, .. an>, order k
-Output: <a^1, a^2, .. a^n>
+Input: <a1, a2, .. an>, order k  
+Output: <a^1, a^2, .. a^n>  
 
-list를 이용할 경우 append or pop 에서 O(N)이 소모된다.  
-시간복잡도를 줄이기 위해서는 아래의 과정이 각각 O(1) 이어야 한다.
+list를 이용할 경우 append or pop 에서 O(N)이 소모된다.    
+시간복잡도를 줄이기 위해서는 아래의 과정이 각각 O(1) 이어야 한다.  
 
-- left pop, right append
-- left append, right pop
+- left pop, right append  
+- left append, right pop  
 
-이를 위해서 deque를 사용했다.
+이를 위해서 deque를 사용했다.  
 """
 import sys
 from collections import deque
