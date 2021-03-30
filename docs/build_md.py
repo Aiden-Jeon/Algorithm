@@ -9,11 +9,11 @@ ROOT_DIR = Path(__file__).parent.parent
 
 
 def make_docs_dir(file_dir: Path):
-    last_modified = time.ctime(os.path.getmtime(file_dir))
-    last_modified = datetime.strptime(last_modified, "%a %b %d %H:%M:%S %Y").strftime(
+    created = time.ctime(os.path.getctime(file_dir))
+    created = datetime.strptime(created, "%a %b %d %H:%M:%S %Y").strftime(
         "%Y-%m-%d"
     )
-    file_name = f"{last_modified}-{file_dir.name}"
+    file_name = f"{created}-{file_dir.name}"
     file_name = file_name.replace(".py", ".md")
     md_dir = ROOT_DIR / "docs/algorithm" / file_name
     print(file_dir, "------>", md_dir)
