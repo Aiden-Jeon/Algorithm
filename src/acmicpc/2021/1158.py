@@ -2,6 +2,7 @@
 title: 요세푸스 문제  
 - problem number: 1158  
 - link: https://www.acmicpc.net/problem/1158   
+
 ---
 
 ## Define input, output

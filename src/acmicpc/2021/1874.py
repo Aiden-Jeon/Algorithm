@@ -2,6 +2,7 @@
 title: 스택수열  
 - problem number: 1874  
 - link: https://www.acmicpc.net/problem/1874  
+
 ---
 
 ## Define input, output

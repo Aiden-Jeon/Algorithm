@@ -2,6 +2,7 @@
 title: 에디터
 - problem number: 1406  
 - link: https://www.acmicpc.net/problem/1406  
+
 ---
 
 ## Define input, output

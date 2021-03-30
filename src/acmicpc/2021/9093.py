@@ -2,6 +2,7 @@
 title: 단어 뒤집기  
 - problem number: 9093  
 - link: https://www.acmicpc.net/problem/9093  
+
 ---
 
 ## Define input, output
