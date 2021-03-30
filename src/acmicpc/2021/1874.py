@@ -1,11 +1,14 @@
 """
 title: 스택수열  
-- problem: 1874  
+- problem number: 1874  
 - link: https://www.acmicpc.net/problem/1874  
+---
 
-Input: empty stack 1 // n  
-Output: array <a1, a2, ...> ai = (push, pop) if cannot return NO  
+## Define input, output
+- Input: empty stack 1 // n  
+- Output: array <a1, a2, ...> ai = (push, pop) if cannot return NO  
 
+## 설명
 스택 수열 동작 예시  
 stack = [] /  / 4  
 stack = [1] /  / 4  

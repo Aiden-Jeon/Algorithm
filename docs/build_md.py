@@ -30,7 +30,7 @@ def make_docs(file_dir: Path, header: list, context: list, code: list):
         f.write(header)
         f.write("\n")
         f.write(context)
-        f.write("\nsource code: \n")
+        f.write("\n## source code \n")
         f.write("```python\n")
         f.write(code)
         f.write("```\n")

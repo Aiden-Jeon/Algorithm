@@ -1,11 +1,15 @@
 """
 title: 요세푸스 문제  
-- problem: 1158  
+- problem number: 1158  
 - link: https://www.acmicpc.net/problem/1158   
+---
 
+## Define input, output
 - Input: <a1, a2, .. an>, order k  
 - Output: <a^1, a^2, .. a^n>  
 
+
+## 설명
 list를 이용할 경우 append or pop 에서 O(N)이 소모된다.    
 시간복잡도를 줄이기 위해서는 아래의 과정이 각각 O(1) 이어야 한다.  
 

@@ -1,8 +1,10 @@
 """
 title: 단어 뒤집기  
-- problem: 9093  
+- problem number: 9093  
 - link: https://www.acmicpc.net/problem/9093  
+---
 
+## Define input, output
 - Input: sentence with words
     - 단어의 기준은 space
     - 대문자는 유지
