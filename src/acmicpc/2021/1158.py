@@ -1,7 +1,7 @@
 """
-# 요세푸스 문제  
-- problem: 1158
-- link: https://www.acmicpc.net/problem/1158  
+title: 요세푸스 문제  
+problem: 1158  
+link: https://www.acmicpc.net/problem/1158   
 
 Input: <a1, a2, .. an>, order k  
 Output: <a^1, a^2, .. a^n>  

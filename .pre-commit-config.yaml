@@ -1,7 +1,0 @@
-repos:
-    - repo: local
-      hooks:
-          - id: convert-py-markdown
-            name: Convert py file to markdown
-            entry: hooks/build_md.py
-            language: script

@@ -1,7 +1,7 @@
 """
-# 에디터
-- problem: 1406
-- link: https://www.acmicpc.net/problem/1406
+title: 에디터
+problem: 1406  
+link: https://www.acmicpc.net/problem/1406  
 
 Input: 문자열, 명령어
 Output: 명령어에 의해 수정된 문자열

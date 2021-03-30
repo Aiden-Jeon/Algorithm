@@ -1,7 +1,7 @@
 """
-# 스택수열
-- problem: 1874
-- link: https://www.acmicpc.net/problem/1874
+title: 스택수열  
+problem: 1874  
+link: https://www.acmicpc.net/problem/1874  
 
 Input: empty stack 1 // n
 Output: array <a1, a2, ...> ai = (push, pop) if cannot return NO

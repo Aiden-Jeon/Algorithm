@@ -1,8 +1,7 @@
-
 """
-# 단어 뒤집기
-- problem: 9093
-- link: https://www.acmicpc.net/problem/9093
+title: 단어 뒤집기  
+problem: 9093  
+link: https://www.acmicpc.net/problem/9093  
 
 Input: sentence with words
     - 단어의 기준은 space
