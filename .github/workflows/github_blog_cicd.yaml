@@ -5,7 +5,7 @@ on:
     branches: [master]
 
 jobs:
-  ci:
+  cicd:
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout
@@ -25,13 +25,13 @@ jobs:
           path: blog
       - name: Copy
         run: |
-          cp -r docs/algorithm blog/_post
+          cp -r docs/algorithm blog/_posts
       - name: Commit file
         run: |
           cd blog
           git config --local user.email "ells2124@gmail.com"
           git config --local user.name "Aiden-Jeon"
-          git add ./_post/algorithm/*.md
+          git add ./_posts/algorithm/*.md
           git commit -m "Update algorithm post"
       - name: Push changes
         uses: ad-m/github-push-action@master
