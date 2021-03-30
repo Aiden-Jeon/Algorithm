@@ -24,19 +24,14 @@ jobs:
           token: ${{ secrets.CR_PAT }}
           path: blog
       - name: Copy
-        uses: andstor/copycat-action@v3
-        with:
-          personal_token: ${{ secrets.CR_PAT }}
-          src_path: ./docs/algorithm
-          dst_path: /blog/_post/
-          dst_owner: Aiden-Jeon
-          dst_repo_name: blog
+        run: |
+          cp -r docs/algorithm blog/_post
       - name: Commit file
         run: |
           cd blog
           git config --local user.email "ells2124@gmail.com"
           git config --local user.name "Aiden-Jeon"
-          git add ./_post/algorithm/*md
+          git add ./_post/algorithm/*.md
           git commit -m "Update algorithm post"
       - name: Push changes
         uses: ad-m/github-push-action@master
