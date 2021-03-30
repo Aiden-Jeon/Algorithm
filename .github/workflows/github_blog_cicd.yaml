@@ -16,8 +16,7 @@ jobs:
           python-version: '3.8.5'
       - name: Generate docs
         run: |
-          cd docs
-          python build_md.py
+          python3 docs/build_md.py
       - name: Checkout blog repo
         uses: actions/checkout@v2
         with:
