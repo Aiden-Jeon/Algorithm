@@ -3,26 +3,25 @@ from datetime import datetime
 import os
 from pathlib import Path
 import time
+from typing import List, Tuple
 
 
 ROOT_DIR = Path(__file__).parent.parent
 
 
-def make_docs_dir(file_dir: Path):
-    created = time.ctime(os.path.getctime(file_dir))
-    created = datetime.strptime(created, "%a %b %d %H:%M:%S %Y").strftime(
-        "%Y-%m-%d"
-    )
-    file_name = f"{created}-{file_dir.name}"
+def make_docs_dir(file_dir: Path, sitename: str) -> str:
+    file_name = f"{file_dir.name}"
     file_name = file_name.replace(".py", ".md")
-    md_dir = ROOT_DIR / "docs/algorithm" / file_name
+    md_dir = ROOT_DIR / "docs/algorithm" / sitename / file_name
     print(file_dir, "------>", md_dir)
     md_dir.parent.mkdir(exist_ok=True, parents=True)
     return md_dir
 
 
-def make_docs(file_dir: Path, header: list, context: list, code: list):
-    md_dir = make_docs_dir(file_dir)
+def make_docs(
+    file_dir: Path, header: list, context: list, code: list, sitename: str
+) -> None:
+    md_dir = make_docs_dir(file_dir, sitename)
     with open(md_dir, "w") as f:
         header = "".join(header)
         context = "".join(context)
@@ -36,7 +35,11 @@ def make_docs(file_dir: Path, header: list, context: list, code: list):
         f.write("```\n")
 
 
-def split_context(file_dir: Path):
+def split_context(
+    file_dir: Path, sitename: str
+) -> Tuple[List[str], List[str], List[str]]:
+    created = time.ctime(os.path.getctime(file_dir))
+    created = datetime.strptime(created, "%a %b %d %H:%M:%S %Y").strftime("%Y-%m-%d")
     header = []
     context = []
     code = []
@@ -49,12 +52,17 @@ def split_context(file_dir: Path):
                 if line.startswith('"""'):
                     is_context = False
                 elif line.startswith("title"):
-                    header += ["---\n"]
-                    header += [line]
-                    header += ["categories: [algorithm]\n"]
-                    header += ["toc: true\n"]
-                    header += ["toc_sticky: true\n"]
-                    header += ["---\n"]
+                    header = [
+f"""---
+{line.strip()}
+categories: [algorithm]
+tags: [{sitename}]
+toc: true
+date: {created}
+author: Jongseob Jeon
+---\n
+"""
+                    ]
                 elif is_context:
                     context += [line]
                 else:
@@ -64,16 +72,21 @@ def split_context(file_dir: Path):
 
 def main():
     src_dir = ROOT_DIR / "src"
-    dirs = [src_dir / d for d in os.listdir(src_dir)]
-    while dirs:
-        dir_name = dirs.pop()
-        if os.path.isdir(dir_name):
-            sub_dirs = [dir_name / d for d in os.listdir(dir_name)]
-            dirs.extend(sub_dirs)
-        else:
-            header, context, code = split_context(dir_name)
-            if len(context) > 0:
-                make_docs(dir_name, header, context, code)
+    for sitename in ["acmicpc", "leetcode"]:
+        site_dir = src_dir / sitename
+        if sitename not in os.listdir(src_dir):
+            continue
+        dirs = [site_dir / d for d in os.listdir(site_dir)]
+        print(dirs)
+        while dirs:
+            dir_name = dirs.pop()
+            if os.path.isdir(dir_name):
+                sub_dirs = [dir_name / d for d in os.listdir(dir_name)]
+                dirs.extend(sub_dirs)
+            else:
+                header, context, code = split_context(dir_name, sitename)
+                if len(context) > 0:
+                    make_docs(dir_name, header, context, code, sitename)
 
 
 if __name__ == "__main__":

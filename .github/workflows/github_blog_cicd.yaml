@@ -25,7 +25,7 @@ jobs:
           path: blog
       - name: Copy
         run: |
-          cp -r docs/algorithm blog/_posts
+          cp -r docs/algorithm blog/content/post
       - name: Commit file
         run: |
           cd blog
