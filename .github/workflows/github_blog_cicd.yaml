@@ -39,4 +39,4 @@ jobs:
           directory: blog
           repository: Aiden-Jeon/Aiden-Jeon.github.io
           github_token: ${{ secrets.CR_PAT }}
-          branch: master
+          branch: main
