@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import sys
 
 number = sys.argv[1]
@@ -14,7 +15,7 @@ title: {title}
 
 ## Define input, output
 - Input:
-- Output
+- Output: 
 
 ## 설명
 
