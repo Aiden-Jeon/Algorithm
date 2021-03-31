@@ -5,8 +5,7 @@ number = sys.argv[1]
 title = sys.argv[2]
 
 FILE_FORMAT = \
-f"""
-\"\"\"
+f"""\"\"\"
 title: {title}
 - problem number: {number}
 - link: https://www.acmicpc.net/problem/{number}  

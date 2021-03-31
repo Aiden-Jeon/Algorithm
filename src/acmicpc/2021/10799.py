@@ -1,4 +1,3 @@
-
 """
 title: 쇠막대기
 - problem number: 10799

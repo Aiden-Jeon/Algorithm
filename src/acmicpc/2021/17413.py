@@ -1,4 +1,3 @@
-
 """
 title: 단어 뒤집기2
 - problem number: 17413
