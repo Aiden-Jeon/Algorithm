@@ -1,5 +1,6 @@
 """
 title: 요세푸스 문제  
+date: 2021-03-30
 - problem number: 1158  
 - link: https://www.acmicpc.net/problem/1158   
 

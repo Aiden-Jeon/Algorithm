@@ -1,5 +1,6 @@
 """
 title: 쇠막대기
+date: 2021-03-31
 - problem number: 10799
 - link: https://www.acmicpc.net/problem/10799  
 

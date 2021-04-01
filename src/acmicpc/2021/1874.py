@@ -1,5 +1,6 @@
 """
 title: 스택수열  
+date: 2021-03-30
 - problem number: 1874  
 - link: https://www.acmicpc.net/problem/1874  
 

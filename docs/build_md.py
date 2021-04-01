@@ -38,8 +38,8 @@ def make_docs(
 def split_context(
     file_dir: Path, sitename: str
 ) -> Tuple[List[str], List[str], List[str]]:
-    created = time.ctime(os.path.getctime(file_dir))
-    created = datetime.strptime(created, "%a %b %d %H:%M:%S %Y").strftime("%Y-%m-%d")
+    # created = time.ctime(os.path.getctime(file_dir))
+    # created = datetime.strptime(created, "%a %b %d %H:%M:%S %Y").strftime("%Y-%m-%d")
     header = []
     context = []
     code = []
@@ -55,10 +55,14 @@ def split_context(
                     header = [
 f"""---
 {line.strip()}
+"""
+                    ]
+                elif line.startswith("date"):
+                    header += [
+f"""{line.strip()}
 categories: [algorithm]
 tags: [{sitename}]
 toc: true
-date: {created}
 author: Jongseob Jeon
 ---\n
 """

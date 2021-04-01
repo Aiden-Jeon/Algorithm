@@ -1,5 +1,6 @@
 """
 title: 오큰수
+date: 2021-03-31
 - problem number: 17298
 - link: https://www.acmicpc.net/problem/17298  
 
@@ -8,9 +9,10 @@ title: 오큰수
 ## Define input, output
 - Input: Array <$a_{1}$, $a_{2}$,...,$a_{n}$>
 - Output: 
-  - Array <$a'_{1}$, $a'_{2}$,...,$a'_{n}$> 
-  - $b_{i} = max(a'_{i+1}, a'_{i+2}, ..., a'_{n})$
-  - $a'_{i} = \text{if } b_{i} > a_{i} \text{ then } b_{i} \text{ else }-1$
+  - Array :
+  - $$<a'_{1}$, $a'_{2}$,...,$a'_{n}>$$  
+  - $$b_{i} = max(a'_{i+1}, a'_{i+2}, ..., a'_{n})$$
+  - $$a'_{i} = \text{if } b_{i} > a_{i} \text{ then } b_{i} \text{ else }-1$$
 
 """
 import sys

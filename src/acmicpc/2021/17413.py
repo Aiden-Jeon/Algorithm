@@ -1,5 +1,6 @@
 """
 title: 단어 뒤집기2
+date: 2021-03-31
 - problem number: 17413
 - link: https://www.acmicpc.net/problem/17413  
 
