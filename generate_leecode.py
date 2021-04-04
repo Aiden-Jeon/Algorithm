@@ -4,14 +4,16 @@ from datetime import datetime
 
 
 number = sys.argv[1]
-title = sys.argv[2]
+difficult = sys.argv[2]
+title = sys.argv[3].replace(" ", "-").lower()
 today = datetime.now().strftime("%Y-%m-%d")
 FILE_FORMAT = \
 f"""\"\"\"
 title: {title}
 date: {today}
 - problem number: {number}
-- link: https://www.acmicpc.net/problem/{number}  
+- difficult: {difficult}  
+- https://leetcode.com/problems/{title}/  
 
 ---
 
@@ -22,11 +24,8 @@ date: {today}
 ## 설명
 
 \"\"\"
-import sys
 
-
-N = int(sys.stdin.readline())
 """
 
-with open(f"src/acmicpc/2021/{number}.py", "w") as f:
+with open(f"src/leetcode/{number}.py", "w") as f:
     f.write(FILE_FORMAT)
