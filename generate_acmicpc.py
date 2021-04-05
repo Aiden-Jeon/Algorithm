@@ -3,9 +3,8 @@ import sys
 from datetime import datetime
 
 
-sitename = sys.argv[1]
-number = sys.argv[2]
-title = sys.argv[3]
+number = sys.argv[1]
+title = sys.argv[2]
 today = datetime.now().strftime("%Y-%m-%d")
 FILE_FORMAT = \
 f"""\"\"\"
@@ -29,5 +28,5 @@ import sys
 N = int(sys.stdin.readline())
 """
 
-with open(f"src/acmipc/2021/{number}.py", "w") as f:
+with open(f"src/acmicpc/2021/{number}.py", "w") as f:
     f.write(FILE_FORMAT)
